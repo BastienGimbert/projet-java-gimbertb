@@ -1,5 +1,7 @@
 package tp1.forme;
-
+/**
+ * La classe TestPoint permet de tester la classe Point
+ */
 public class TestPoint {
     public static void main(String[] args) {
         Point point1 = new Point();

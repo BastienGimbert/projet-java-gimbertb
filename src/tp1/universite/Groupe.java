@@ -1,5 +1,7 @@
 package tp1.universite;
-
+/**
+ * La classe Groupe représente la notion de groupe (libellé).
+ */
 public class Groupe {
     private String libelle;
 

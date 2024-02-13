@@ -128,7 +128,7 @@ public class Etudiant {
         for (int i = 0; i < notes.length; i++) {
             if (notes[i] == 0.0) {
                 notes[i] = note;
-                return;
+                break;
             }
         }
     }

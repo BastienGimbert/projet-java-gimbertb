@@ -1,5 +1,7 @@
 package tp1.forme;
-
+/**
+ * La classe TestCercle permet de tester la classe Cercle
+ */
 public class TestCercle {
 
     public static void main(String[] args) {

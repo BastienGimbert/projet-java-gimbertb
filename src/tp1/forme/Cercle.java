@@ -1,5 +1,8 @@
 package tp1.forme;
-
+/**
+ * Classe Cercle
+ * Représente un cercle
+ */
 public class Cercle {
     private int rayon;
     private Point centre = new Point();

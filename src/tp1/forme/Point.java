@@ -1,5 +1,8 @@
 package tp1.forme;
-
+/**
+ * Classe Point
+ * Représente un point
+ */
 public class Point {
 
     private int x = 0;

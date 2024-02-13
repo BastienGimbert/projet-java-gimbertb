@@ -1,5 +1,7 @@
 package tp1.forme;
-
+/**
+ * La classe TestRectangle permet de tester la classe Rectangle.
+ */
 public class TestRectangle {
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle(2, 4, 2, 3);

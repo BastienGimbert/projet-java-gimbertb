@@ -1,5 +1,7 @@
 package tp1.forme;
-
+/**
+ * La classe FormeUtilitaire contient des méthodes utilitaires pour afficher les caractéristiques des formes géométriques.
+ */
 public class FormeUtilitaire {
     /**
      * Affiche les coordonnées d'un point dans la console sous la forme "Point: x=..., y=..."
