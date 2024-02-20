@@ -8,7 +8,10 @@ public class Groupe {
     Groupe(String libelle) {
         this.libelle = libelle;
     }
-
+    /**
+     * Retourne le libellé du groupe
+     * @return le libellé du groupe
+     */
     public String getLibelle() {
         return libelle;
     }

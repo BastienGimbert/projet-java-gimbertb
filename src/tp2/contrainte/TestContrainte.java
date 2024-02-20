@@ -3,6 +3,10 @@ package tp2.contrainte;
  * Classe pour les notes
  */
 public class TestContrainte {
+    /**
+     * Méthode principale
+     * @param args les arguments de la ligne de commande
+     */
     public static void main(String[] args) {
 
         // Tester la méthode saisir avec un intervalle [0, 20]

@@ -3,7 +3,9 @@ package tp1.forme;
  * La classe TestCercle permet de tester la classe Cercle
  */
 public class TestCercle {
-
+    /** Méthode principale
+     * @param args les arguments de la ligne de commande
+     */
     public static void main(String[] args) {
         // créer un point
         Point point = new Point(0,2);

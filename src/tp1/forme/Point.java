@@ -7,9 +7,18 @@ public class Point {
 
     private int x = 0;
     private int y = 0;
+    /**
+     * Constructeur par défaut
+     */
     public Point() {
         this(0, 0);
     }
+
+    /**
+     * Constructeur avec 2 paramètres
+     * @param x la coordonnée x
+     * @param y la coordonnée y
+     */
     public Point(int x, int y) {
         setX(x);
         setY(y);

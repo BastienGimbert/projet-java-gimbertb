@@ -1,8 +1,14 @@
 package tp1;
 
 import java.util.Scanner;
-
+/**
+ * La classe TestString permet de tester les méthodes de la classe String
+ */
 public class TestString {
+    /**
+     * Méthode principale
+     * @param args les arguments de la ligne de commande
+     */
     public static void main(String[] args) {
         // Exercice 1
 

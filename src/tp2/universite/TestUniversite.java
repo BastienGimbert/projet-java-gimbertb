@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class TestUniversite {
     /**
      * Méthode principale pour tester l'université
-     * @param args
+     * @param args les arguments de la ligne de commande
      */
     public static void main(String[] args) {
         //TestEtudiant();

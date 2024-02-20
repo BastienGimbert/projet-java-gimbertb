@@ -4,6 +4,10 @@ package tp1.universite;
  * Elle crée des étudiants et affiche leurs informations.
  */
 public class TestEtudiant {
+    /**
+     * Méthode principale
+     * @param args les arguments de la ligne de commande
+     */
     public static void main(String[] args) {
         // Création des étudiants
         // IMPORTANT mettre des valeurs qui ne respectent pas les contraintes

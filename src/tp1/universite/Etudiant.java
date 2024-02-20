@@ -14,7 +14,12 @@ public class Etudiant {
     private String Adresse;
     private double[] notes;
     private Groupe groupe;
-
+    /**
+     * Constructeur de la classe Etudiant avec 3 paramètres (login, prenom, nom)
+     * @param login le login de l'étudiant
+     * @param prenom le prénom de l'étudiant
+     * @param nom le nom de l'étudiant
+     */
     public Etudiant(String login, String nom, String prenom) {
         setLogin(login);
         setNom(nom);

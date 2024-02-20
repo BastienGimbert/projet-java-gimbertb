@@ -3,6 +3,10 @@ package tp1.forme;
  * La classe TestRectangle permet de tester la classe Rectangle.
  */
 public class TestRectangle {
+    /**
+     * Méthode principale
+     * @param args les arguments de la ligne de commande
+     */
     public static void main(String[] args) {
         Rectangle rectangle = new Rectangle(2, 4, 2, 3);
         FormeUtilitaire.afficheRectangle(rectangle);

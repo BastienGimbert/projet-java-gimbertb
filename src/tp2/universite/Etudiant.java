@@ -13,9 +13,9 @@ public class Etudiant extends Personne {
 
     /**
      * Constructeur de la classe Etudiant avec 3 paramètres (login, prenom, nom) de la classe Personne
-     * @param login
-     * @param prenom
-     * @param nom
+     * @param login le login de l'étudiant
+     * @param prenom le prénom de l'étudiant
+     * @param nom le nom de l'étudiant
      */
     public Etudiant(String login, String prenom, String nom) {
         // Appel du constructeur de la classe parent
@@ -25,11 +25,11 @@ public class Etudiant extends Personne {
     }
     /**
      * Constructeur de la classe Etudiant avec 4 paramètres (login, prenom, nom, adresse) de la classe Personne
-     * @param login
-     * @param prenom
-     * @param nom
-     * @param adresse
-     * @param adresseParent
+     * @param login le login de l'étudiant
+     * @param prenom le prénom de l'étudiant
+     * @param nom le nom de l'étudiant
+     * @param adresse l'adresse de l'étudiant
+     * @param adresseParent l'adresse des parents de l'étudiant
      */
     public Etudiant(String login, String prenom, String nom, String adresse, String adresseParent) {
         // Appel du constructeur de la classe parent
@@ -72,16 +72,16 @@ public class Etudiant extends Personne {
 
     /**
      * Méthode pour set l'adresse de l'étudiant et l'adresse des parents
-     * @param adresse
-     * @param adresseParent
+     * @param adresse l'adresse de l'étudiant
+     * @param adresseParent l'adresse des parents de l'étudiant
      */
     public void setAdresse(String adresse, String adresseParent) {
         super.setAdresse(adresse);
         this.adresseParent = adresseParent;
     }
     /**
-     * Méthode pour récupérer l'adresse des parents
-     * @return l'adresse des parents
+     * Méthode pour définir l'adresse des parents
+     * @param adresseParent l'adresse des parents de l'étudiant
      */
     public void setAdresseParent(String adresseParent) {
         this.adresseParent = adresseParent;
@@ -89,6 +89,7 @@ public class Etudiant extends Personne {
 
     /**
      * Méthode pour ajouter une note à l'étudiant
+     * @param note la note à ajouter
      */
     public void addNote (Note note) {
         this.notes.add(note);

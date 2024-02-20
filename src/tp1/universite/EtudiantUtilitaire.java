@@ -22,7 +22,7 @@ public class EtudiantUtilitaire {
 
     /**
      * Afficher les informations d'un étudiant ( login + nom complet + mail ). Si l'étudiant a une adresse, elle est affichée. Sinon, "aucune" est affiché.
-     * @param etudiant
+     * @param etudiant l'étudiant à afficher
      */
     public static void AfficherEtudiant(Etudiant etudiant) {
         System.out.println("Login : " + etudiant.getLogin());

@@ -8,10 +8,21 @@ import tp2.contrainte.ReelContraint;
 public class Personnel extends Personne {
     private int echelon;
     private ReelContraint pointDIndice;
-
+    /**
+     * Constantes
+     */
     public static final int MIN_ECHELON = 1;
+    /**
+     * Constantes
+     */
     public static final int MAX_ECHELON = 4;
+    /**
+     * Constantes
+     */
     public static final double MIN_POINT_D_INDICE = 1000;
+    /**
+     * Constantes
+     */
     public static final double MAX_POINT_D_INDICE = 1200;
 
     /**
@@ -33,7 +44,7 @@ public class Personnel extends Personne {
      * @param prenom le prénom
      * @param nom le nom
      * @param echelon l'échelon
-     * @param @pointDIndice le point d'indice
+     * @param pointDIndice le point d'indice
      */
 
     public Personnel(String login, String prenom, String nom, int echelon, double pointDIndice) {
