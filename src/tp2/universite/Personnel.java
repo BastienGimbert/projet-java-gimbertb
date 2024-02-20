@@ -1,10 +1,13 @@
 package tp2.universite;
+
+import tp2.contrainte.ReelContraint;
+
 /**
  * Classe pour les personnels
  */
 public class Personnel extends Personne {
     private int echelon;
-    private double pointDIndice;
+    private ReelContraint pointDIndice;
 
     public static final int MIN_ECHELON = 1;
     public static final int MAX_ECHELON = 4;
@@ -20,7 +23,8 @@ public class Personnel extends Personne {
     public Personnel(String login, String prenom, String nom) {
         super(login, prenom, nom);
         this.echelon = MIN_ECHELON;
-        this.pointDIndice = MIN_POINT_D_INDICE;
+        this.pointDIndice = new ReelContraint(MIN_POINT_D_INDICE, MAX_POINT_D_INDICE);
+        this.pointDIndice.setValeur(MIN_POINT_D_INDICE);
     }
 
     /**
@@ -35,7 +39,8 @@ public class Personnel extends Personne {
     public Personnel(String login, String prenom, String nom, int echelon, double pointDIndice) {
         super(login, prenom, nom);
         setEchelon(echelon);
-        setPointDIndice(pointDIndice);
+        this.pointDIndice = new ReelContraint(MIN_POINT_D_INDICE, MAX_POINT_D_INDICE);
+        this.pointDIndice.setValeur(pointDIndice);
     }
 
     /**
@@ -52,7 +57,7 @@ public class Personnel extends Personne {
      * @return le point d'indice
      */
 
-    public double getPointDIndice() {
+    public ReelContraint getPointDIndice() {
         return pointDIndice;
     }
 
@@ -62,7 +67,7 @@ public class Personnel extends Personne {
      */
 
     public double getSalaire() {
-        return echelon * pointDIndice;
+        return echelon * pointDIndice.getValeur();
     }
 
     /**
@@ -86,12 +91,15 @@ public class Personnel extends Personne {
      */
 
     public void setPointDIndice(double pointDIndice) {
-        if (pointDIndice < MIN_POINT_D_INDICE) {
-            this.pointDIndice = MIN_POINT_D_INDICE;
-        } else if (pointDIndice > MAX_POINT_D_INDICE) {
-            this.pointDIndice = MAX_POINT_D_INDICE;
-        } else {
-            this.pointDIndice = pointDIndice;
-        }
+        this.pointDIndice.setValeur(pointDIndice);
+    }
+
+    /**
+     * Méthode pour obtenir le mail
+     * @return le mail
+     */
+
+    public String getMail() {
+        return getPrenom() + "." + getNom() + "@univ-grenoble-alpes.fr";
     }
 }

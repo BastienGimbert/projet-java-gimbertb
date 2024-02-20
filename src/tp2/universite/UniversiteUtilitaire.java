@@ -42,7 +42,7 @@ public class UniversiteUtilitaire {
         System.out.println("Mail : " + personnel.getMail());
         System.out.println("Adresse : " + personnel.getAdresse());
         System.out.println("Echelon : " + personnel.getEchelon());
-        System.out.println("Point d'indice : " + personnel.getPointDIndice());
+        System.out.println("Point d'indice : " + personnel.getPointDIndice().getValeur());
         System.out.println("Salaire : " + personnel.getSalaire() + "\n");
     }
 

@@ -1,9 +1,15 @@
 package tp2.universite;
+
+import tp2.contrainte.Note;
+
+import java.util.ArrayList;
+
 /**
  * Classe pour représenter un Etudiant
  */
 public class Etudiant extends Personne {
     private String adresseParent;
+    private ArrayList<Note> notes;
 
     /**
      * Constructeur de la classe Etudiant avec 3 paramètres (login, prenom, nom) de la classe Personne
@@ -14,6 +20,7 @@ public class Etudiant extends Personne {
     public Etudiant(String login, String prenom, String nom) {
         // Appel du constructeur de la classe parent
         super(login, prenom, nom);
+        this.notes = new ArrayList<Note>();
 
     }
     /**
@@ -28,6 +35,7 @@ public class Etudiant extends Personne {
         // Appel du constructeur de la classe parent
         super(login, prenom, nom, adresse);
         setAdresseParent(adresseParent);
+        this.notes = new ArrayList<Note>();
     }
     /**
      * Méthode pour récupérer le mail
@@ -77,6 +85,32 @@ public class Etudiant extends Personne {
      */
     public void setAdresseParent(String adresseParent) {
         this.adresseParent = adresseParent;
+    }
+
+    /**
+     * Méthode pour ajouter une note à l'étudiant
+     */
+    public void addNote (Note note) {
+        this.notes.add(note);
+    }
+
+    /**
+     * Méthode pour récupérer les notes de l'étudiant
+     * @return les notes de l'étudiant
+     */
+    public ArrayList<Note> getNotes() {
+        return this.notes;
+    }
+    /**
+     * Méthode pour récupérer la moyenne de l'étudiant
+     * @return la moyenne de l'étudiant
+     */
+    public double getMoyenne() {
+        double somme = 0;
+        for (Note note : this.notes) {
+            somme += note.getValeur();
+        }
+        return somme / this.notes.size();
     }
 
 }

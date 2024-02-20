@@ -25,12 +25,12 @@ public class TestUniversite {
         ArrayList<Personne> personnes = new ArrayList<>();
 
         // Création de deux personnes
-        Personne personne1 = new Personne("martinp", "Philippe", "MARTIN");
-        Personne personne2 = new Personne("blanchonh", "Hervé", "BLANCHON", "2 Place Doyen Gosse");
+        //Personne personne1 = new Personne("martinp", "Philippe", "MARTIN");
+        //Personne personne2 = new Personne("blanchonh", "Hervé", "BLANCHON", "2 Place Doyen Gosse");
 
         // Ajouter les deux personnes à la liste
-        personnes.add(personne1);
-        personnes.add(personne2);
+        // personnes.add(personne1);
+        // personnes.add(personne2);
 
         // Création de trois étudiants
         Etudiant etudiant1 = new Etudiant("SANZF", "FLORIANT", "Sanz");

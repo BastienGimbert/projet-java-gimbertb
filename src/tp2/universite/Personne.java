@@ -3,7 +3,7 @@ package tp2.universite;
  * Classe pour représenter une personne
  */
 
-public class Personne {
+public abstract class Personne {
     private String login;
     private String nom;
     private String prenom;
@@ -78,9 +78,7 @@ public class Personne {
      * Méthode pour récupérer le mail
      * @return le mail de la personne ( @univ-grenoble-alpes.fr)
      */
-    public String getMail() {
-        return getNom() + "." + getPrenom() + "@univ-grenoble-alpes.fr";
-    }
+    public abstract String getMail();
     /**
      * Méthode pour vérifier si l'adresse existe
      * @return true si l'adresse existe, false sinon
