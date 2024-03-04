@@ -4,6 +4,10 @@ import java.util.ArrayList;
  * Classe Telephone
  */
 public class TestTelephone {
+    /**
+     * Méthode main
+     * @param args arguments
+     */
     public static void main(String[] args) {
         // Liste de processeurs disponibles : Octa-Core 2.84Ghz et Octa-Core 3Ghz
         Processeur processeur1 = new Processeur("Octa-Core", 2.84);

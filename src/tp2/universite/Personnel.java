@@ -32,7 +32,7 @@ public class Personnel extends Personne {
      * @param nom le nom
      */
     public Personnel(String login, String prenom, String nom) {
-        super(login, prenom, nom);
+        super(login, nom, prenom);
         this.echelon = MIN_ECHELON;
         this.pointDIndice = new ReelContraint(MIN_POINT_D_INDICE, MAX_POINT_D_INDICE);
         this.pointDIndice.setValeur(MIN_POINT_D_INDICE);

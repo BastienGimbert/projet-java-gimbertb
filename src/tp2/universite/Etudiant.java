@@ -7,7 +7,7 @@ import java.util.ArrayList;
 /**
  * Classe pour représenter un Etudiant
  */
-public class Etudiant extends Personne {
+public class Etudiant extends Personne implements Comparable<Etudiant> {
     private String adresseParent;
     private ArrayList<Note> notes;
 
@@ -19,7 +19,7 @@ public class Etudiant extends Personne {
      */
     public Etudiant(String login, String prenom, String nom) {
         // Appel du constructeur de la classe parent
-        super(login, prenom, nom);
+        super(login, nom, prenom);
         this.notes = new ArrayList<Note>();
 
     }
@@ -33,7 +33,7 @@ public class Etudiant extends Personne {
      */
     public Etudiant(String login, String prenom, String nom, String adresse, String adresseParent) {
         // Appel du constructeur de la classe parent
-        super(login, prenom, nom, adresse);
+        super(login, nom, prenom, adresse);
         setAdresseParent(adresseParent);
         this.notes = new ArrayList<Note>();
     }
@@ -114,4 +114,12 @@ public class Etudiant extends Personne {
         return somme / this.notes.size();
     }
 
+    @Override
+    public int compareTo(Etudiant p) {
+        if (this.getNom().compareTo(p.getNom()) != 0) {
+            return this.getNom().compareTo(p.getNom());
+        } else {
+            return this.getPrenom().compareTo(p.getPrenom());
+        }
+    }
 }
