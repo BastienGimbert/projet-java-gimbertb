@@ -3,6 +3,7 @@ package tp2.universite;
 import tp2.contrainte.Note;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 /**
  * Classe pour représenter un Etudiant
@@ -10,6 +11,8 @@ import java.util.ArrayList;
 public class Etudiant extends Personne implements Comparable<Etudiant> {
     private String adresseParent;
     private ArrayList<Note> notes;
+
+    private Groupe groupe;
 
     /**
      * Constructeur de la classe Etudiant avec 3 paramètres (login, prenom, nom) de la classe Personne
@@ -113,7 +116,11 @@ public class Etudiant extends Personne implements Comparable<Etudiant> {
         }
         return somme / this.notes.size();
     }
-
+    /**
+     * Méthode pour comparer deux étudiants
+     * @param p l'étudiant à comparer
+     * @return 0 si les étudiants sont égaux, un nombre négatif si l'étudiant est inférieur à p, un nombre positif si l'étudiant est supérieur à p
+     */
     @Override
     public int compareTo(Etudiant p) {
         if (this.getNom().compareTo(p.getNom()) != 0) {
@@ -122,4 +129,45 @@ public class Etudiant extends Personne implements Comparable<Etudiant> {
             return this.getPrenom().compareTo(p.getPrenom());
         }
     }
+
+    /**
+     * Méthode pour voir si le groupe de l'étudiant existe
+     * @return true si le groupe de l'étudiant existe, false sinon
+     */
+
+    public boolean existGroupe() {
+        return this.groupe != null;
+    }
+    /**
+     * Méthode pour vérifier si l'étudiant est contenu dans un groupe
+     * @return true si l'étudiant est contenu dans un groupe, false sinon
+     */
+    public boolean isContainedGroupe() {
+        return this.groupe.containsEtudiant(this);
+    }
+    /**
+     * Méthode pour récupérer le groupe de l'étudiant
+     * @return le groupe de l'étudiant
+     */
+    public Groupe getGroupe() {
+        return groupe;
+    }
+    /**
+     * Méthode pour définir le groupe de l'étudiant
+     * @param groupe le groupe de l'étudiant
+     * Si le groupe est différent de null et que l'étudiant n'est pas déjà dans le groupe, on ajoute l'étudiant au groupe
+     */
+    public void setGroupe(Groupe groupe) {
+        if (this.groupe != groupe) {
+            if (this.groupe != null) {
+                this.groupe.removeEtudiant(this);
+            }
+            this.groupe = groupe;
+            if (groupe != null && !groupe.getEtudiants().contains(this)) {
+                groupe.addEtudiant(this);
+            }
+        }
+    }
+
+
 }

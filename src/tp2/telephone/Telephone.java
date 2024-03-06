@@ -117,11 +117,18 @@ public class Telephone {
      * Retourne une représentation textuelle du téléphone
      * @return représentation textuelle du téléphone
      */
+    @Override
     public String toString() {
-        return "Libellé: " + libelle + "\n" +
-                "Processeur: " + processeur.getLibelle() + " (" + processeur.getFrequence() + " GHz)\n" +
-                "Mémoire vive: " + getNombreGigaRam() + " Go\n" +
-                "Stockage: " + stockage.getType() + " (" + stockage.getNombreGiga() + " Go)\n" +
-                "Ecran: " + ecran.getType() + " (" + ecran.getTaille() + " pouces)\n";
+        String ramString;
+        if (ram.size() == 1) {
+            ramString = "[" + ram.get(0).getType() + " " + ram.get(0).getNombreGiga() + "G]";
+        } else {
+            ramString = "[" + ram.get(0).getType() + " " + ram.get(0).getNombreGiga() + "G + " + ram.get(1).getType() + " " + ram.get(1).getNombreGiga() + "G]";
+        }
+
+        return libelle + ", processeur = " + processeur.getLibelle() + " (" + processeur.getFrequence() + "GHz), " +
+                "ram = " + getNombreGigaRam() + "Giga " + ramString + ", " +
+                "stockage = [" + stockage.getType() + ", " + stockage.getNombreGiga() + "Giga], " +
+                "ecran = [" + ecran.getType() + ", " + ecran.getTaille() + " pouces]";
     }
 }

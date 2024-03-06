@@ -1,1 +1,1 @@
-packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"jeu"},{"l":"tp1"},{"l":"tp1.forme"},{"l":"tp1.universite"},{"l":"tp2.contrainte"},{"l":"tp2.telephone"},{"l":"tp2.universite"},{"l":"tp3.billetterie"}];updateSearchResults();
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"jeu"},{"l":"tp1"},{"l":"tp1.forme"},{"l":"tp1.universite"},{"l":"tp2.contrainte"},{"l":"tp2.telephone"},{"l":"tp2.universite"},{"l":"tp3.billetterie"},{"l":"tp3.etudiant"}];updateSearchResults();
