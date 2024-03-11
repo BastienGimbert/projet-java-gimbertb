@@ -13,5 +13,6 @@ public class TestGuerrier {
         guerrier2.subirDegats(100);
         System.out.println("Points de vie de guerrier2 après subirDegats(5) : " + guerrier2.getPointsDeVie());
         System.out.println("Est-ce que guerrier2 est vivant ? " + guerrier2.estVivant());
+        System.out.println(GuerrieurUtilitaire.de3(2));
     }
 }

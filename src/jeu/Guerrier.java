@@ -23,7 +23,7 @@ public class Guerrier {
     }
 
     public void attaquer(Guerrier guerrier) {
-        guerrier.setPointsDeVie(guerrier.getPointsDeVie() - force);
+        guerrier.subirDegats(this.getForce());
     }
 
     protected void subirDegats(int degats) {
