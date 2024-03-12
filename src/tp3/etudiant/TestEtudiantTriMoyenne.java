@@ -49,7 +49,10 @@ public class TestEtudiantTriMoyenne {
         System.out.println("--------------\nLes étudiants après Collections.sort");
         affichageEtudiants(mesEtudiantsTries);
     }
-
+    /**
+     * Affiche les étudiants
+     * @param etudiants la collection d'étudiants
+     */
     private static void affichageEtudiants(Collection<Etudiant> etudiants) {
         System.out.println("--------------");
         for(Etudiant etudiant : etudiants) {
@@ -57,6 +60,9 @@ public class TestEtudiantTriMoyenne {
         }
     }
 
+    /**
+     * Comparateur pour trier les étudiants par moyenne
+     */
     public static final Comparator<Etudiant> ComparateurMoyenne = new Comparator<Etudiant>() {
         @Override
         public int compare(Etudiant etudiant1, Etudiant etudiant2) {
