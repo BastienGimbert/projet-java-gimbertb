@@ -1,10 +1,14 @@
 package tp5;
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.Random;
 import java.util.logging.Level;
+import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
 public class TestLogging {
     private static Logger LOGGER = Logger.getLogger(TestLogging.class.getPackageName());
+    private static final LogManager logManager = LogManager.getLogManager();
 
     public static void main(String[] args) {
         LOGGER.log(Level.INFO, "Mon premier log !");
@@ -21,6 +25,13 @@ public class TestLogging {
             LOGGER.log( Level.INFO, "dividende = {0}, diviseur = {1} et quotient = {2}", data );
         } catch (ArithmeticException e) {
             LOGGER.log(Level.SEVERE, "Le message d'exception : " + e.toString());
+        }
+    }
+    static{
+        try {
+            logManager.readConfiguration( new FileInputStream("conf/debug-logging.properties") );
+        } catch ( IOException exception ) {
+            LOGGER.log( Level.SEVERE, "Cannot read configuration file", exception );
         }
     }
 }
