@@ -10,8 +10,8 @@ public class Multiplication extends Operation {
      * @param terme1 : premier terme de la multiplication
      * @param terme2 : deuxième terme de la multiplication
      */
-    public Multiplication(double terme1, double terme2) {
-        super(terme1, terme2);
+    public Multiplication(double terme1, double terme2, boolean modeSansErreur) {
+        super(terme1, terme2, modeSansErreur);
     }
     /**
      * Méthode qui calcule le résultat de la multiplication

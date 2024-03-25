@@ -11,6 +11,7 @@ public abstract class Operation {
     private double terme1;
     private double terme2;
     private Double reponseUtilisateur;
+    private boolean modeSansErreur;
 
     /**
      * Constructeur de la classe Operation
@@ -18,17 +19,20 @@ public abstract class Operation {
      * @param terme2 TERME 2
      */
 
-    public Operation(double terme1, double terme2) {
+    public Operation(double terme1, double terme2, boolean modeSansErreur) {
         this.terme1 = terme1;
         this.terme2 = terme2;
-
+        this.modeSansErreur = modeSansErreur;
         LOGGER.info("Création d'opération avec les termes " + terme1 + " et " + terme2);
     }
     /**
      * Méthode qui set la réponse de l'utilisateur
      */
-    public void setReponseUtilisateur(Double reponseUtilisateur) {
-        this.reponseUtilisateur = reponseUtilisateur;
+    public void setReponseUtilisateur(Double reponse) throws ErreurOperationException {
+        this.reponseUtilisateur = reponse;
+        if (modeSansErreur && !isReponseJuste() ) {
+            throw new ErreurOperationException("La réponse n'est pas correcte, réessayez !");
+        }
     }
     /**
      * Méthode qui retourne une valeur booléenne représentant si l'utilisateur a répondu

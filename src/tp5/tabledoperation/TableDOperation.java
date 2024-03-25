@@ -10,14 +10,16 @@ public class TableDOperation {
     private OperationEnum typeOperation;
     private static final int NB_OPERATIONS = 5;
     private Operation[] operation = new Operation[NB_OPERATIONS];
+    private boolean modeSansErreur;
 
 
     /**
      * Constructeur de la classe TableDOperation
      * @param typeOperation type d'opération
      */
-    TableDOperation(OperationEnum typeOperation) {
+    TableDOperation(OperationEnum typeOperation, boolean modeSansErreur) {
         this.typeOperation = typeOperation;
+        this.modeSansErreur = modeSansErreur;
         LOGGER.info("Type d'operation : " + typeOperation);
         initialisation();
     }
@@ -27,7 +29,7 @@ public class TableDOperation {
     private void initialisation() {
         LOGGER.info("Initialisation des opérations");
         for (int i = 0; i < NB_OPERATIONS; i++) {
-            operation[i] = typeOperation.getOperation(OperationUtilitaire.randomDouble(),OperationUtilitaire.randomDouble());
+            operation[i] = typeOperation.getOperation(OperationUtilitaire.randomDouble(),OperationUtilitaire.randomDouble(), modeSansErreur);
         }
     }
     /**
@@ -38,11 +40,9 @@ public class TableDOperation {
         int nbReponsesJustes = 0;
         for (int i = 0; i < NB_OPERATIONS; i++) {
             if (operation[i].isReponseJuste()) {
-//                LOGGER.setLevel(Level.INFO);
                 LOGGER.info("Une réponse juste de l'utilisateur");
                 nbReponsesJustes++;
             } else {
-//                LOGGER.setLevel(Level.WARNING);
                 LOGGER.warning("Une réponse fausse de l'utilisateur");
             }
         }

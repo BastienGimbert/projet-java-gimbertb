@@ -10,14 +10,14 @@ public enum OperationEnum {
      * @param terme2 : deuxième terme de l'opération
      * @return une opération
      */
-    public Operation  getOperation(double terme1, double terme2) {
+    public Operation  getOperation(double terme1, double terme2, boolean modeSansErreur) {
         switch (this) {
             case ADDITION:
-                return new Addition(terme1, terme2);
+                return new Addition(terme1, terme2, modeSansErreur);
             case SOUSTRACTION:
-                return new Soustraction(terme1, terme2);
+                return new Soustraction(terme1, terme2, modeSansErreur);
             case MULTIPLICATION:
-                return new Multiplication(terme1, terme2);
+                return new Multiplication(terme1, terme2, modeSansErreur);
             default:
                 return null;
         }

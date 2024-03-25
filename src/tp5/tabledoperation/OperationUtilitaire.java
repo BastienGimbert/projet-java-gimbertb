@@ -47,4 +47,19 @@ public class OperationUtilitaire {
             return saisieEntreMinEtMax(min, max);
         }
     }
+    /**
+     * Méthode qui permet de saisir un boolean
+     * @return un boolean
+     */
+    public static boolean saisieSeulementTrueouFalse() {
+        Scanner lecteur = new Scanner(System.in);
+        try {
+            System.out.println("Mode sans erreur true ou false ?");
+            boolean saisie = lecteur.nextBoolean();
+            return saisie;
+        } catch (Exception e) {
+            System.out.println("Merci de répondre par true ou false ?");
+            return saisieSeulementTrueouFalse();
+        }
+    }
 }

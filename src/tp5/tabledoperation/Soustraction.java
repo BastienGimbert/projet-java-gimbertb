@@ -8,8 +8,8 @@ public class Soustraction extends Operation{
      * @param terme1 : premier terme de la soustraction
      * @param terme2 : deuxième terme de la soustraction
      */
-    public Soustraction(double terme1, double terme2) {
-        super(terme1, terme2);
+    public Soustraction(double terme1, double terme2, boolean modeSansErreur) {
+        super(terme1, terme2, modeSansErreur);
     }
     /**
      * Méthode qui calcule le résultat de la soustraction

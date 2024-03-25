@@ -17,7 +17,7 @@ public class TestTableDOperation {
     private static Logger LOGGER = Logger.getLogger(TestLogging.class.getPackageName());
     private static final LogManager logManager = LogManager.getLogManager();
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ErreurOperationException {
 
         Scanner lecteur = new Scanner(System.in);
         int saisie = OperationUtilitaire.saisieEntreMinEtMax(1, 3);
@@ -36,20 +36,37 @@ public class TestTableDOperation {
             default:
                 TypeOperation = OperationEnum.ADDITION;
         }
-        TableDOperation tableDOperation = new TableDOperation(TypeOperation);
+
+        boolean modeSansErreur = OperationUtilitaire.saisieSeulementTrueouFalse();
+
+        TableDOperation tableDOperation = new TableDOperation(TypeOperation, modeSansErreur);
 
         for (int i = 0; i < tableDOperation.getNombreDOperations(); i++) {
             Operation operation = tableDOperation.getOperation(i);
             System.out.println(operation);
-            Double reponseUtilisateur = lecteur.nextDouble();
-            operation.setReponseUtilisateur(reponseUtilisateur);
+            while (true) {
+                try {
+                    Double reponseUtilisateur = lecteur.nextDouble();
+                    operation.setReponseUtilisateur(reponseUtilisateur);
+                    break;
+                } catch (ErreurOperationException e) {
+                    if (modeSansErreur) {
+                        System.out.println(e.getMessage());
+                        System.out.println(operation);
+                    } else {
+                        throw e;
+                    }
+                }
+            }
         }
 
         System.out.println("Nombre de réponses justes : " + tableDOperation.getNombreReponsesJustes());
 
 
     }
-
+    /**
+     * Initialisation du logger
+     */
     static{
         try {
             logManager.readConfiguration( new FileInputStream("conf/debug-logging.properties") );
