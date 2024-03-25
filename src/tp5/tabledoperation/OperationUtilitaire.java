@@ -1,25 +1,37 @@
 package tp5.tabledoperation;
 import java.util.Random;
 import java.util.Scanner;
-
+/**
+ * OperationUtilitaire est une classe utilitaire pour les opérations
+ */
 public class OperationUtilitaire {
     private static final Random random = new Random();
     private static final int RANGE_MAX = 200;
     private static final int ARRONDI = 10;
 
-    // Retourne une valeur de type double entre 0 et RANGE_MAX/ARRONDI
+    /**
+     * Retourne un nombre aléatoire entre 0 et 200
+     * @return un nombre aléatoire entre 0 et 200
+     */
     public static double randomDouble() {
         return (double)random.nextInt(RANGE_MAX)/ARRONDI;
     }
 
-    // Retourne la valeur double arrondi
-    // Evite les erreurs de calcul du au double en Java
-
+    /**
+     * Arrondi un double à 2 chiffres après la virgule
+     * @param valeur
+     * @return la valeur arrondie
+     */
     public static double arrondir(double valeur) {
         return (double)Math.round(valeur * ARRONDI) / ARRONDI;
     }
 
-
+    /**
+     * Méthode qui permet de saisir un entier entre min et max
+     * @param min : valeur minimale
+     * @param max : valeur maximale
+     * @return un entier entre min et max
+     */
     public static int saisieEntreMinEtMax(int min, int max){
         Scanner lecteur = new Scanner(System.in);
         try {

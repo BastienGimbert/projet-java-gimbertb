@@ -5,11 +5,15 @@ import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
-
+/**
+ * TestLogging , une classe pour tester les logs
+ */
 public class TestLogging {
     private static Logger LOGGER = Logger.getLogger(TestLogging.class.getPackageName());
     private static final LogManager logManager = LogManager.getLogManager();
-
+    /**
+     * @param args
+     */
     public static void main(String[] args) {
         LOGGER.log(Level.INFO, "Mon premier log !");
 
